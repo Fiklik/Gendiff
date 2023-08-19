@@ -2,10 +2,10 @@ name: tests-and-lint-check
 
 on:
   push:
-    jobs:
-      check:
-        runs-on: ubuntu-latest
-        steps:
-          - uses: actions/checkout@v3
-          - run: make lint
-          - run: make test
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: make lint
+      - run: make test
