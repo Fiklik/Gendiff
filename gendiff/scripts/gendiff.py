@@ -11,12 +11,10 @@ def get_files_from_paths(file_path1, file_path2):
 
 
 def generate_diff(file1, file2):
-    print(type(file1), type(file2))
     file1_keys = list(file1)
     file2_keys = list(file2)
     keys = list(set(file1_keys + file2_keys))
     keys.sort()
-    print(*keys)
     result = '{\n'
     for key in keys:
         if key in file1 and key in file2:
