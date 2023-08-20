@@ -1,4 +1,4 @@
-from gendiff.scripts.gendiff import generate_diff
+from gendiff.scripts.gendiff import generate_diff, get_files_from_paths
 import pytest
 
 
@@ -7,10 +7,12 @@ def comparison_file():
     with open('./tests/fixtures/file.txt') as result_file:
         result = result_file.read()
         print(result)
-    path1 = './file1.json'
-    path2 = './file2.json'
+    file1, file2 = get_files_from_paths(
+        './file1.json',
+        './file2.json'
+    ) 
     gendiff_result = generate_diff(
-        path1, path2
+        file1, file2
     )
     print(gendiff_result)
     return result, gendiff_result
