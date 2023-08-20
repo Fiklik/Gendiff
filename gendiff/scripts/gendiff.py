@@ -14,7 +14,7 @@ def generate_diff(file1, file2):
     file1_keys = list(file1)
     file2_keys = list(file2)
     unique_keys = set(file1_keys + file2_keys)
-    keys = list()
+    keys = list(unique_keys)
     keys.sort()
     result = '{\n'
     for key in keys:
