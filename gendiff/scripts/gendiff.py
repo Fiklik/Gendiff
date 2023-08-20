@@ -13,7 +13,8 @@ def get_files_from_paths(file_path1, file_path2):
 def generate_diff(file1, file2):
     file1_keys = list(file1)
     file2_keys = list(file2)
-    keys = list(set(file1_keys + file2_keys))
+    unique_keys = set(file1_keys + file2_keys)
+    keys = list()
     keys.sort()
     result = '{\n'
     for key in keys:
