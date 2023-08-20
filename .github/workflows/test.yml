@@ -8,6 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - runs: python -m pip isntall poetry
-      - runs: poetry add --group dev pytest
-      - rund: poetry run pytest
+      - run: python -m pip isntall poetry
+      - run: poetry add --group dev pytest
+      - run: poetry run pytest
