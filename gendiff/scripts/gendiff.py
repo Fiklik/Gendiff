@@ -4,8 +4,9 @@ import json
 
 
 def generate_diff(file_path1, file_path2):
-    file1 = json.load(open(file_path1))
-    file2 = json.load(open(file_path2))
+    with open(file_path1) as file1, open(file_path2) as file2:
+        file1 = json.load(file1)
+        file2 = json.load(file2)
     file1_keys = list(file1)
     file2_keys = list(file2)
     keys = list(set(file1_keys + file2_keys))
