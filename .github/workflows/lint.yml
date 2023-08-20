@@ -1,0 +1,12 @@
+name: lint
+
+on: 
+  push:
+
+jobs:
+  flake8:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: poetry install
+      - run: poetry run flake8 gendiff
