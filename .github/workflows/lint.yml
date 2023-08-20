@@ -8,5 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - run: Install poetry
       - run: poetry install
       - run: poetry run flake8 gendiff
