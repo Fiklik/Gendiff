@@ -8,7 +8,7 @@ def generate_diff(file_path1, file_path2):
     file2 = json.load(open(file_path2))
     file1_keys = list(file1)
     file2_keys = list(file2)
-    keys = list(set(list(file1) + list(file2)))
+    keys = list(set(file1_keys + file2_keys))
     keys.sort()
     result = '{\n'
     for key in keys:
