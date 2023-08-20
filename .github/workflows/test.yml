@@ -1,0 +1,13 @@
+name: test
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - runs: python -m pip isntall poetry
+      - runs: poetry add --group dev pytest
+      - rund: poetry run pytest
