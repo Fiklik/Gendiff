@@ -21,9 +21,6 @@ jobs:
       #     coverageCommand: poetry run pytest --cov=gendiff.scripts
       #     debug: true
 
-      - name: Run linter and pytest
-        run: |
-          make check
       - name: Create reporter
         run: |
           curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
@@ -35,6 +32,6 @@ jobs:
           poetry run coverage lcov -o coverage/lcov.info
       - name: Sending Reporter
         env:
-          GITHUB_TOKEN: ${{ secrets.Coverage }} 
+          GITHUB_TOKEN: ${{ secrets.CC_TEST_REPORTER_ID }} 
         run: |
           ./cc-test-reporter after-build -r "$GITHUB_TOKEN" -t lcov
