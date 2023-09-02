@@ -12,15 +12,10 @@ def parse_yml(path):
         return yaml.safe_load(file)
 
 
-def parse(file1, file2):
-    if file1.endswith('.json'):
-        file1 = parse_json(file1)
-    elif file1.endswith('.yml') or file1.endswith('.yaml'):
-        file1 = parse_yml(file1)
+def parse(path):
+    if path.endswith('.json'):
+        file = parse_json(path)
+    elif path.endswith('.yml') or path.endswith('.yaml'):
+        file = parse_yml(path)
 
-    if file2.endswith('.json'):
-        file2 = parse_json(file2)
-    elif file2.endswith('.yml') or file2.endswith('.yaml'):
-        file2 = parse_yml(file2)
-
-    return file1, file2
+    return file
