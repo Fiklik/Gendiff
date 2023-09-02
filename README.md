@@ -6,3 +6,6 @@
 
 ### CodeClimate Maintainability and TestCoverage status:
 [![Maintainability](https://api.codeclimate.com/v1/badges/f041e11c244da26f3187/maintainability)](https://codeclimate.com/github/Fiklik/python-project-50/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/f041e11c244da26f3187/test_coverage)](https://codeclimate.com/github/Fiklik/python-project-50/test_coverage)
+
+### Пример работы пакета
+[![asciicast](https://asciinema.org/a/W3toKOIJ893EJoEwFvDrZpVQJ.svg)](https://asciinema.org/a/W3toKOIJ893EJoEwFvDrZpVQJ)
