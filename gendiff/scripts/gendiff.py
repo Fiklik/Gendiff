@@ -34,7 +34,7 @@ def main():
     parser.add_argument('-f', '--format', help='set format of output')
     args = parser.parse_args()
     file1 = parse(args.first_file)
-    file2 = parse(args.second_file_file)
+    file2 = parse(args.second_file)
     diff = generate_diff(file1, file2)
     print(diff)
 
