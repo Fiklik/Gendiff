@@ -3,16 +3,16 @@ import argparse
 from .parser import parse
 
 
-def get_unique_keys_list(dict1, dict2):
+def get_unique_sorted_keys_list(dict1, dict2):
     unique_keys = set(dict1.keys() | dict2.keys())
     keys_list = list(unique_keys)
+    keys_list.sort()
 
     return keys_list
 
 
 def generate_diff(file1, file2):
-    keys = get_unique_keys_list(file1, file2)
-    keys.sort()
+    keys = get_unique_sorted_keys_list(file1, file2)
     result = '{\n'
     for key in keys:
         if key in file1 and key in file2:
