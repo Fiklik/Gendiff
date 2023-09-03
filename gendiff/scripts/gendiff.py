@@ -1,6 +1,6 @@
 #!usr/bin/env python3
-import argparse
-from .parser import parse
+from . import cli, diff
+import itertools
 
 
 def get_unique_sorted_keys_list(dict1, dict2):
@@ -11,7 +11,8 @@ def get_unique_sorted_keys_list(dict1, dict2):
     return keys_list
 
 
-def generate_diff(file1, file2):
+def generate_diff(file1, file2, format='stylish'):
+    format = format
     keys = get_unique_sorted_keys_list(file1, file2)
     result = '{\n'
     for key in keys:
@@ -30,17 +31,11 @@ def generate_diff(file1, file2):
 
 
 def main():
-    parser = argparse.ArgumentParser(
-        description='Compares two configuration files and shows a difference.'
-    )
-    parser.add_argument('first_file', type=str)
-    parser.add_argument('second_file', type=str)
-    parser.add_argument('-f', '--format', help='set format of output')
-    args = parser.parse_args()
-    file1 = parse(args.first_file)
-    file2 = parse(args.second_file)
-    diff = generate_diff(file1, file2)
-    print(diff)
+    file1, file2 = cli.parse_command_line()
+    difference = diff.difference_between_files(file1, file2)
+    # difference = generate_diff(file1, file2)
+    result = itertools.chain(difference)
+    print(*result, sep='\n')
 
 
 if __name__ == '__main__':
