@@ -2,7 +2,7 @@ install:
 	poetry install
 
 gendiff:
-	poetry run gendiff tests/fixtures/file1.yml tests/fixtures/file2.yml
+	poetry run gendiff tests/fixtures/file.json tests/fixtures/fille.json
 
 build:
 	poetry build

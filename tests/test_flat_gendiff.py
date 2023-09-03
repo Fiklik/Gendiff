@@ -9,8 +9,8 @@ def comparison_file():
         example = example_file.read()
     # file1 = 'tests/fixtures/file1.json'
     # file2 = 'tests/fixtures/file2.json'
-    file1 = parse('tests/fixtures/file1.json')
-    file2 = parse('tests/fixtures/file2.json')
+    file1 = parse('tests/fixtures/file.json')
+    file2 = parse('tests/fixtures/fille.json')
     gendiff_result = generate_diff(
         file1, file2
     )

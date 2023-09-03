@@ -4,9 +4,7 @@ from .parser import parse
 
 
 def generate_diff(file1, file2):
-    file1_keys = list(file1)
-    file2_keys = list(file2)
-    unique_keys = set(file1_keys + file2_keys)
+    unique_keys = set(file1.keys() | file2.keys())
     keys = list(unique_keys)
     keys.sort()
     result = '{\n'
