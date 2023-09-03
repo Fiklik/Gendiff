@@ -3,9 +3,15 @@ import argparse
 from .parser import parse
 
 
+def get_unique_keys_list(dict1, dict2):
+    unique_keys = set(dict1.keys() | dict2.keys())
+    keys_list = list(unique_keys)
+
+    return keys_list
+
+
 def generate_diff(file1, file2):
-    unique_keys = set(file1.keys() | file2.keys())
-    keys = list(unique_keys)
+    keys = get_unique_keys_list(file1, file2)
     keys.sort()
     result = '{\n'
     for key in keys:
