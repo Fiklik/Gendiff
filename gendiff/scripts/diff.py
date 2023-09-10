@@ -6,7 +6,7 @@ def get_unique_sorted_keys_list(dict1, dict2):
     return keys_list
 
 
-def difference_between_files(data1, data2):
+def get_difference_between_files(data1, data2):
 
     keys = get_unique_sorted_keys_list(data1, data2)
 
@@ -34,11 +34,11 @@ def difference_between_files(data1, data2):
                 diff_list.append({
                     'key': key,
                     'change': 'node',
-                    'children': difference_between_files(
+                    'children': get_difference_between_files(
                         data1[key], data2[key]
                     )
                 })
-                
+
             elif data1[key] != data2[key]:
                 diff_list.append({
                     'key': key,
@@ -46,7 +46,7 @@ def difference_between_files(data1, data2):
                     'old_value': data1[key],
                     'new_value': data2[key]
                 })
-                
+
             elif data1[key] == data2[key]:
                 diff_list.append({
                     'key': key,
@@ -55,5 +55,3 @@ def difference_between_files(data1, data2):
                 })
 
     return diff_list
-
-
