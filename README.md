@@ -11,4 +11,4 @@
 [![asciicast](https://asciinema.org/a/wb3mXYNPs33w2jLTEfviAXMp8.svg)](https://asciinema.org/a/wb3mXYNPs33w2jLTEfviAXMp8)
 
 ### Пример работы пакета с плоскими yml-файлами
-[![asciicast](https://asciinema.org/a/o3eG3UF3LinE55E24qTXaX0Vy.svg)](https://asciinema.org/a/o3eG3UF3LinE55E24qTXaX0Vy)
+[![asciicast](https://asciinema.org/a/r2kxXt1Ew0dEvpGf3gC31HM4n.svg)](https://asciinema.org/a/r2kxXt1Ew0dEvpGf3gC31HM4n)
