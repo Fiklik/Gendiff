@@ -15,3 +15,6 @@
 
 ### Пример работы пакета с вложенными файлами
 [![asciicast](https://asciinema.org/a/KSCr8WvsE3TYbw67zg8nd3s8i.svg)](https://asciinema.org/a/KSCr8WvsE3TYbw67zg8nd3s8i)
+
+### Пример работы пакета с форматом - plain
+[![asciicast](https://asciinema.org/a/x6PN1Mebs9NT7OlFGKAWcxgFN.svg)](https://asciinema.org/a/x6PN1Mebs9NT7OlFGKAWcxgFN)
