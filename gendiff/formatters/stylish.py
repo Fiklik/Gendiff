@@ -20,7 +20,7 @@ def get_stylish_output(array, replacer=' ', spaces_count=1, depth=1):
                     f"{formatted_str}"
                 )
 
-            case 'new':
+            case 'added':
                 formatted_str = format_value(
                     elem['value'],
                     replacer,

@@ -23,7 +23,7 @@ def get_difference_between_files(data1, data2):
         elif key not in data1:
             diff_list.append({
                 'key': key,
-                'change': 'new',
+                'change': 'added',
                 'value': data2[key]
             })
 

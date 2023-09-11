@@ -9,13 +9,11 @@ from gendiff.formatters.format import format_diff
 def comparison_file():
     with open('tests/fixtures/step_3_fixtures/file.txt') as example_file:
         example = example_file.read()
-    # file1 = 'tests/fixtures/file1.json'
-    # file2 = 'tests/fixtures/file2.json'
     file1 = parse('tests/fixtures/step_3_fixtures/file1.yml')
     file2 = parse('tests/fixtures/step_3_fixtures/file2.yml')
     difference = get_difference_between_files(file1, file2)
     result = list(itertools.chain(difference))
-    for_print = format_diff(result)
+    for_print = format_diff(result, format='stylish')
 
     return example, for_print
 

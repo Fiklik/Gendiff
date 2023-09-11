@@ -10,12 +10,15 @@ def parse_command_line():
     parser.add_argument('second_file', type=str)
     parser.add_argument(
         '-f', '--format',
-        nargs='?',
+        type=str,
+        default='stylish',
         const='stylish',
+        nargs='?',
         help='set format of output (default: "stylish")'
     )
     args = parser.parse_args()
     path_to_file1 = parse(args.first_file)
     path_to_file2 = parse(args.second_file)
+    format = args.format
 
-    return path_to_file1, path_to_file2
+    return path_to_file1, path_to_file2, format
