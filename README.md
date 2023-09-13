@@ -13,8 +13,11 @@
 ### Пример работы пакета с плоскими yml-файлами
 [![asciicast](https://asciinema.org/a/r2kxXt1Ew0dEvpGf3gC31HM4n.svg)](https://asciinema.org/a/r2kxXt1Ew0dEvpGf3gC31HM4n)
 
-### Пример работы пакета с вложенными файлами
+### Пример работы пакета с форматом вывода stylish
 [![asciicast](https://asciinema.org/a/KSCr8WvsE3TYbw67zg8nd3s8i.svg)](https://asciinema.org/a/KSCr8WvsE3TYbw67zg8nd3s8i)
 
-### Пример работы пакета с форматом - plain
+### Пример работы пакета с форматом вывода plain
 [![asciicast](https://asciinema.org/a/x6PN1Mebs9NT7OlFGKAWcxgFN.svg)](https://asciinema.org/a/x6PN1Mebs9NT7OlFGKAWcxgFN)
+
+### Пример работы пакета с форматом вывода json
+[![asciicast](https://asciinema.org/a/sGJPfq9Sme7mJL5aNOSltFxjm.svg)](https://asciinema.org/a/sGJPfq9Sme7mJL5aNOSltFxjm)
