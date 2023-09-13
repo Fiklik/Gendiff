@@ -1,12 +1,13 @@
 import pytest
 from gendiff.scripts.diff import get_difference_between_files
 from gendiff.scripts.parser import parse
+from gendiff.formatters.json import get_json_output
 
 
 @pytest.fixture
 def flat_diff():
-    file1 = parse('tests/fixtures/test_files/flat_files/flat1.json')
-    file2 = parse('tests/fixtures/test_files/flat_files/flat2.json')
+    file1 = parse('tests/fixtures/flat_files/flat1.json')
+    file2 = parse('tests/fixtures/flat_files/flat2.json')
     return get_difference_between_files(file1, file2)
 
 
@@ -19,9 +20,16 @@ def nested_diff():
 
 @pytest.fixture
 def flat_text():
-    path = 'tests/fixtures/test_files/flat_files/flat.txt'
+    path = 'tests/fixtures/flat_files/flat.txt'
     with open(path) as flat_file:
         return flat_file.read()
+
+
+@pytest.fixture
+def flat_plain_text():
+    path = 'tests/fixtures/flat_files/flat_plain.txt'
+    with open(path) as flat_plain_file:
+        return flat_plain_file.read()
 
 
 @pytest.fixture
