@@ -21,7 +21,7 @@ def format_diff(difference, format='stylish'):
         )
 
         return formatted_diff
-    
+
     elif format == 'json':
         formatted_diff = get_json_output(
             difference
