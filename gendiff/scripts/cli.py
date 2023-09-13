@@ -1,5 +1,5 @@
 import argparse
-from .parser import parse
+from gendiff.scripts.parser import parse
 
 
 def parse_command_line():

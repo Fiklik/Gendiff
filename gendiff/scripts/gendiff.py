@@ -1,14 +1,13 @@
 #!usr/bin/env python3
-from . import cli, diff
-import itertools
-from ..formatters.format import format_diff
+from gendiff.scripts.cli import parse_command_line
+from gendiff.scripts.diff import get_difference_between_files
+from gendiff.formatters.format import format_diff
 
 
 def main():
-    file1, file2, format = cli.parse_command_line()
-    difference = diff.get_difference_between_files(file1, file2)
-    result = list(itertools.chain(difference))
-    for_print = format_diff(result, format)
+    file1, file2, format = parse_command_line()
+    difference = get_difference_between_files(file1, file2)
+    for_print = format_diff(difference, format)
     return for_print
 
 

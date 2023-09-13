@@ -1,10 +1,13 @@
-from . import stylish, plain
+# import itertools
+from gendiff.formatters.json import get_json_output
+from gendiff.formatters.plain import get_plain_output
+from gendiff.formatters.stylish import get_stylish_output
 
 
-def format_diff(diff, format='stylish'):
+def format_diff(difference, format='stylish'):
     if format == 'stylish':
-        formatted_diff = stylish.get_stylish_output(
-            diff,
+        formatted_diff = get_stylish_output(
+            difference,
             replacer=' ',
             spaces_count=1,
             depth=1
@@ -13,8 +16,15 @@ def format_diff(diff, format='stylish'):
         return formatted_diff
 
     elif format == 'plain':
-        formatted_diff = plain.get_plain_output(
-            diff
+        formatted_diff = get_plain_output(
+            difference
+        )
+
+        return formatted_diff
+    
+    elif format == 'json':
+        formatted_diff = get_json_output(
+            difference
         )
 
         return formatted_diff
