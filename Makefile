@@ -11,17 +11,17 @@ publish:
 	poetry publish --dry-run
 
 package-install:
-	python3.11 -m pip install --user dist/*.whl
+	python3 -m pip install --user dist/*.whl
 
 quick-reinstall:
 	poetry install
 	poetry build
 	poetry publish --dry-run
-	python3 -m pip install --user dist/*.whl --break-system-packages
+	python3 -m pip install --user dist/*.whl
 
 lint:
 	poetry run flake8 gendiff
 test:
 	poetry run pytest
 
-.PHONY: gendiff
+.PHONY: gendiff install build publish

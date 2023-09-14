@@ -51,22 +51,3 @@ def json_text():
     path = 'tests/fixtures/json.txt'
     with open(path) as json_file:
         return json_file.read()
-
-
-# @pytest.fixture
-# def texts():
-#     files = [
-#         'tests/fixtures/step_3_fixtures/file.txt',
-#         'tests/fixtures/step_6_fixtures/file.txt',
-#         'tests/fixtures/step_7_fixtures/file.txt'
-#     ]
- 
-#     with (#open(files[0], 'r') as flat_text_file,
-#         open(files[1], 'r') as stylish_text_file,
-#         #open(files[2], 'r') as plain_text_file
-#     ):
-#         #flat_text = flat_text_file.read()
-#         stylish_text = stylish_text_file.read()
-#         #plain_text = plain_text_file.read()
-
-#     return stylish_text
