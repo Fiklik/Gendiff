@@ -112,7 +112,7 @@ def format_value(value, replacer=' ', spaces_count=1, depth=0):
         return str(value).lower()
     if value is None:
         return 'null'
-    if isinstance(value, str):
+    if isinstance(value, (str, int)):
         return value
 
-    return value
+    return str(value)
