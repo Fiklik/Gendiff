@@ -21,21 +21,23 @@ def get_difference_between_files(data1, data2):
 def check_entry(key, data1, data2):
 
     if key not in data2:
-        return create_dict(key, 'deleted', data1, data2)
+        result = create_dict(key, 'deleted', data1, data2)
 
     elif key not in data1:
-        return create_dict(key, 'added', data1, data2)
+        result = create_dict(key, 'added', data1, data2)
 
     elif key in data1 and key in data2:
         if isinstance(data1[key], dict) \
                 and isinstance(data2[key], dict):
-            return create_dict(key, 'node', data1, data2)
+            result = create_dict(key, 'node', data1, data2)
 
         elif data1[key] != data2[key]:
-            return create_dict(key, 'updated', data1, data2)
+            result = create_dict(key, 'updated', data1, data2)
 
         elif data1[key] == data2[key]:
-            return create_dict(key, 'unchanged', data1, data2)
+            result = create_dict(key, 'unchanged', data1, data2)
+
+    return result
 
 
 def create_dict(key, change, data1=None, data2=None):
