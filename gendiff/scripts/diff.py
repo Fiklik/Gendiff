@@ -42,21 +42,21 @@ def create_dict(key, change, data1=None, data2=None):
 
     match change:
         case 'added':
-            return {
+            dictionary = {
                 'key': key,
                 'change': change,
                 'value': data2[key]
             }
 
         case 'deleted':
-            return {
+            dictionary = {
                 'key': key,
                 'change': change,
                 'value': data1[key]
             }
 
         case 'updated':
-            return {
+            dictionary = {
                     'key': key,
                     'change': change,
                     'old_value': data1[key],
@@ -64,17 +64,19 @@ def create_dict(key, change, data1=None, data2=None):
                 }
 
         case 'unchanged':
-            return {
+            dictionary = {
                     'key': key,
                     'change': change,
                     'value': data1[key]
                 }
 
         case 'node':
-            return {
+            dictionary = {
                     'key': key,
                     'change': 'node',
                     'children': get_difference_between_files(
                         data1[key], data2[key]
                     )
                 }
+
+    return dictionary
