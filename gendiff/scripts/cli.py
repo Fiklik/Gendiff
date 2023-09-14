@@ -1,5 +1,4 @@
 import argparse
-from gendiff.scripts.parser import parse
 
 
 def parse_command_line():
@@ -17,8 +16,5 @@ def parse_command_line():
         help='set format of output (default: "stylish")'
     )
     args = parser.parse_args()
-    path_to_file1 = parse(args.first_file)
-    path_to_file2 = parse(args.second_file)
-    format = args.format
 
-    return path_to_file1, path_to_file2, format
+    return args.first_file, args.first_file, args.format
