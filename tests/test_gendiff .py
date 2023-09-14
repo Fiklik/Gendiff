@@ -1,6 +1,5 @@
 import pytest
 from gendiff.formatters.format import format_diff
-from gendiff.scripts.diff import get_difference_between_files
 
 
 @pytest.mark.usefixtures

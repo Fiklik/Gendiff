@@ -1,7 +1,6 @@
 import pytest
 from gendiff.scripts.diff import get_difference_between_files
 from gendiff.scripts.parser import parse
-from gendiff.formatters.json import get_json_output
 
 
 @pytest.fixture
