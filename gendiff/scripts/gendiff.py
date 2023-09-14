@@ -12,7 +12,7 @@ def generate_diff():
 
 
 def main():
-    generate_diff()
+    return generate_diff()
 
 
 if __name__ == '__main__':
