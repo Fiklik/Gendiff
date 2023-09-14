@@ -24,4 +24,9 @@ lint:
 test:
 	poetry run pytest
 
-.PHONY: gendiff install build publish
+git:
+	git add .
+	git commit -m 'fix'
+	git push
+
+.PHONY: gendiff install build publish git

@@ -61,14 +61,14 @@ def create_dict(key, change, data1=None, data2=None):
                 'change': change,
                 'old_value': data1[key],
                 'new_value': data2[key]
-                }
+            }
 
         case 'unchanged':
             dictionary = {
                 'key': key,
                 'change': change,
                 'value': data1[key]
-                }
+            }
 
         case 'node':
             dictionary = {
@@ -76,7 +76,7 @@ def create_dict(key, change, data1=None, data2=None):
                 'change': 'node',
                 'children': get_difference_between_files(
                     data1[key], data2[key]
-                    )
-                }
+                )
+            }
 
     return dictionary
