@@ -17,4 +17,4 @@ def parse_command_line():
     )
     args = parser.parse_args()
 
-    return args.first_file, args.first_file, args.format
+    return args.first_file, args.second_file, args.format

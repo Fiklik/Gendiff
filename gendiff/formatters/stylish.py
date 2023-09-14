@@ -115,4 +115,4 @@ def format_value(value, replacer=' ', spaces_count=1, depth=0):
     if isinstance(value, str):
         return value
 
-    return str(value)
+    return value
