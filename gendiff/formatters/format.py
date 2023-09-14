@@ -1,4 +1,3 @@
-# import itertools
 from gendiff.formatters.json import get_json_output
 from gendiff.formatters.plain import get_plain_output
 from gendiff.formatters.stylish import get_stylish_output

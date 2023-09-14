@@ -9,11 +9,3 @@ def generate_diff() -> str:
     difference = get_difference_between_files(file1, file2)
     final_result = format_diff(difference, format)
     return final_result
-
-
-def main():
-    return generate_diff()
-
-
-if __name__ == '__main__':
-    main()
