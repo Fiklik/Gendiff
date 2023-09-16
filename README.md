@@ -7,6 +7,26 @@
 ### CodeClimate Maintainability and TestCoverage status:
 [![Maintainability](https://api.codeclimate.com/v1/badges/f041e11c244da26f3187/maintainability)](https://codeclimate.com/github/Fiklik/python-project-50/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/f041e11c244da26f3187/test_coverage)](https://codeclimate.com/github/Fiklik/python-project-50/test_coverage)
 
+### Описание 
+Вычислитель отличий – программа, которая определяет разницу между двумя структурами данных.
+
+Возможности утилиты:
+
+* Поддержка разных входных форматов: yaml, json
+* Генерация отчета в виде plain text, stylish и json
+
+### Инструкция по установке 
+**make build** - сборка проекта 
+
+**make package-install** - установка с помощью pip в пользовательское окружение
+
+### Запуск
+gendiff [-h] [-f FORMAT] first_file second_file
+
+**Опциональные параметры**
+* -h, --help показать руководство по использованию
+* -f FORMAT, --format FORMAT указание в каком виде выполнить отчет
+
 ### Пример работы пакета с плоскими json-файлами
 [![asciicast](https://asciinema.org/a/wb3mXYNPs33w2jLTEfviAXMp8.svg)](https://asciinema.org/a/wb3mXYNPs33w2jLTEfviAXMp8)
 
