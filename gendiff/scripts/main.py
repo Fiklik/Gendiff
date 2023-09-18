@@ -1,5 +1,6 @@
+#!usr/bin/env python3
 from gendiff.gendiff import generate_diff
-from gendiff.scripts.cli import parse_command_line
+from gendiff.cli import parse_command_line
 
 
 def main():
