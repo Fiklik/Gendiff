@@ -34,7 +34,7 @@ def get_stylish_output(array, depth=1):
             case 'updated':
                 old_formatted_str = format_value(elem['old_value'], depth)
                 new_formatted_str = format_value(
-                    elem['new_value'],
+                    elem['new_value'], depth
                 )
                 result.append(
                     f"{indent_before_key}- {elem['key']}: "
