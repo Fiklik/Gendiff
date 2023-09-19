@@ -8,6 +8,7 @@ FILE1_EXTENSION = FILE1_PATH.split('.')[1]
 FILE2_PATH = 'tests/fixtures/files/file2.json'
 FILE2_EXTENSION = FILE2_PATH.split('.')[1]
 
+
 @pytest.fixture
 def nested_diff():
     with (
