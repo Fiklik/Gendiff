@@ -1,98 +1,96 @@
+from itertools import chain
+
+
 REPLACER = ' '
-SPACES_COUNT = 1
+DEPTH = 0
+SPACES_COUNT = 4
 
 
-def stylize(array):
-    output = get_stylish_output(array)
+def stylize(diff):
+    output = get_stylish_output(diff)
     return output
 
 
-def get_stylish_output(array, depth=1):
+def get_stylish_output(data, depth=DEPTH):
 
+    if not isinstance(data, dict):
+        return format_value(data)
+
+    indent_size = depth + SPACES_COUNT
+    indent = REPLACER * indent_size
+    current_indent = REPLACER * depth
+    indent_before_changed_key = indent[2:]
     result = []
 
-    for elem in array:
+    for key, val in data.items():
 
-        indent_before_key = REPLACER * (SPACES_COUNT * depth * 4 - 2)
-        indent_before_bracket = REPLACER * (SPACES_COUNT * depth * 4)
+        if isinstance(val, dict) and 'change' in val:
 
-        match elem['change']:
-            case 'deleted':
-                formatted_str = format_value(elem['value'], depth)
-                result.append(
-                    f"{indent_before_key}- {elem['key']}: "
-                    f"{formatted_str}"
-                )
+            match val['change']:
 
-            case 'added':
-                formatted_str = format_value(elem['value'], depth)
-                result.append(
-                    f"{indent_before_key}+ {elem['key']}: "
-                    f"{formatted_str}"
-                )
+                case 'added':
 
-            case 'updated':
-                old_formatted_str = format_value(elem['old_value'], depth)
-                new_formatted_str = format_value(
-                    elem['new_value'], depth
-                )
-                result.append(
-                    f"{indent_before_key}- {elem['key']}: "
-                    f"{old_formatted_str}"
-                )
-                result.append(
-                    f"{indent_before_key}+ {elem['key']}: "
-                    f"{new_formatted_str}"
-                )
+                    result.append(
+                        f"{indent_before_changed_key}+ {key}: "
+                        f"{get_stylish_output(val['value'], indent_size)}"
+                    )
 
-            case 'unchanged':
-                formatted_str = format_value(elem['value'], depth)
-                result.append(
-                    f"{indent_before_key}  {elem['key']}: "
-                    f"{formatted_str}"
-                )
+                case 'node':
 
-            case 'node':
-                result.append(
-                    f"{indent_before_key}  {elem['key']}: " + '{'
-                )
-                children = get_stylish_output(elem['children'], depth + 1)
-                result.append(
-                    f"{children}"
-                    f"\n{indent_before_bracket}{'}'}"
-                )
+                    result.append(
+                        f"{indent_before_changed_key}  {key}: "
+                        f"{get_stylish_output(val['children'], indent_size)}"
+                    )
 
-    if depth == 1:
-        result = ['{'] + result + ['}']
+                case 'updated':
+
+                    old_val = format_value(val['old_value'])
+
+                    result.append(
+                        f"{indent_before_changed_key}- {key}: "
+                        f"{get_stylish_output(old_val, indent_size)}"
+                    )
+
+                    new_val = format_value(val['new_value'])
+
+                    result.append(
+                        f"{indent_before_changed_key}+ {key}: "
+                        f"{get_stylish_output(new_val, indent_size)}"
+                    )
+
+                case 'deleted':
+
+                    result.append(
+                        f"{indent_before_changed_key}- {key}: "
+                        f"{get_stylish_output(val['value'], indent_size)}"
+                    )
+
+                case 'unchanged':
+
+                    result.append(
+                        f"{indent_before_changed_key}  {key}: "
+                        f"{get_stylish_output(val['value'], indent_size)}"
+                    )
+
+        else:
+
+            new_val = format_value(val)
+
+            result.append(
+                f"{indent}{key}: "
+                f"{get_stylish_output(new_val, indent_size)}"
+            )
+
+    result = chain('{', result, [current_indent + '}'])
 
     return '\n'.join(result)
 
 
-def format_value(value, spaces_count=1, depth=1):
-
-    if isinstance(value, dict):
-        indent_before_key = REPLACER * (spaces_count * depth * 4 + 4)
-        indent_before_bracket = REPLACER * (spaces_count * depth * 4)
-        result = []
-        result.append('{')
-
-        for key in value:
-            result.append(
-                f"\n{indent_before_key}{key}: "
-                f"""{format_value(
-                    value[key],
-                    spaces_count + 1
-                )}"""
-            )
-
-        result.append(f"\n{indent_before_bracket}" + '}')
-        return ''.join(result)
+def format_value(value):
 
     if isinstance(value, bool):
         return str(value).lower()
     if value is None:
         return 'null'
-    if isinstance(value, (str, int)):
-        return value
 
-    return str(value)
+    return value

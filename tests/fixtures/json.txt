@@ -1,98 +1,81 @@
-[
-    {
-        "key": "common",
+{
+    "common": {
         "change": "node",
-        "children": [
-            {
-                "key": "follow",
+        "children": {
+            "follow": {
                 "change": "added",
                 "value": false
             },
-            {
-                "key": "setting1",
+            "setting1": {
                 "change": "unchanged",
                 "value": "Value 1"
             },
-            {
-                "key": "setting2",
+            "setting2": {
                 "change": "deleted",
                 "value": 200
             },
-            {
-                "key": "setting3",
+            "setting3": {
                 "change": "updated",
                 "old_value": true,
                 "new_value": null
             },
-            {
-                "key": "setting4",
+            "setting4": {
                 "change": "added",
                 "value": "blah blah"
             },
-            {
-                "key": "setting5",
+            "setting5": {
                 "change": "added",
                 "value": {
                     "key5": "value5"
                 }
             },
-            {
-                "key": "setting6",
+            "setting6": {
                 "change": "node",
-                "children": [
-                    {
-                        "key": "doge",
+                "children": {
+                    "doge": {
                         "change": "node",
-                        "children": [
-                            {
-                                "key": "wow",
+                        "children": {
+                            "wow": {
                                 "change": "updated",
                                 "old_value": "",
                                 "new_value": "so much"
                             }
-                        ]
+                        }
                     },
-                    {
-                        "key": "key",
+                    "key": {
                         "change": "unchanged",
                         "value": "value"
                     },
-                    {
-                        "key": "ops",
+                    "ops": {
                         "change": "added",
                         "value": "vops"
                     }
-                ]
+                }
             }
-        ]
+        }
     },
-    {
-        "key": "group1",
+    "group1": {
         "change": "node",
-        "children": [
-            {
-                "key": "baz",
+        "children": {
+            "baz": {
                 "change": "updated",
                 "old_value": "bas",
                 "new_value": "bars"
             },
-            {
-                "key": "foo",
+            "foo": {
                 "change": "unchanged",
                 "value": "bar"
             },
-            {
-                "key": "nest",
+            "nest": {
                 "change": "updated",
                 "old_value": {
                     "key": "value"
                 },
                 "new_value": "str"
             }
-        ]
+        }
     },
-    {
-        "key": "group2",
+    "group2": {
         "change": "deleted",
         "value": {
             "abc": 12345,
@@ -101,8 +84,7 @@
             }
         }
     },
-    {
-        "key": "group3",
+    "group3": {
         "change": "added",
         "value": {
             "deep": {
@@ -113,4 +95,4 @@
             "fee": 100500
         }
     }
-]
+}
