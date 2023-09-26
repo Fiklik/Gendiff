@@ -22,5 +22,5 @@ def get_file_data(file_path):
 
 
 def get_file_extension(file_path):
-    file_extension = file_path[file_path.rfind('.')+1:]
+    file_extension = file_path[file_path.rfind('.') + 1:]
     return file_extension
