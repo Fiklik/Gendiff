@@ -1,5 +1,5 @@
 from gendiff.formatters.json import get_json_output
-from gendiff.formatters.plain2 import get_plain_output
+from gendiff.formatters.plain import get_plain_output
 from gendiff.formatters.stylish import stylize
 
 
