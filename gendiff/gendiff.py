@@ -1,6 +1,6 @@
 #!usr/bin/env python3
 from gendiff.parser import parse
-from gendiff.diff import get_difference_between_files
+from gendiff.diff import get_difference
 from gendiff.formatters.format import format_diff
 
 
@@ -9,7 +9,7 @@ def generate_diff(file_path1, file_path2, format='stylish'):
         get_file_data(file_path1),
         get_file_data(file_path2)
     )
-    difference = get_difference_between_files(file1_data, file2_data)
+    difference = get_difference(file1_data, file2_data)
     final_result = format_diff(difference, format)
     return final_result
 

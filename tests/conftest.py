@@ -1,5 +1,5 @@
 import pytest
-from gendiff.diff import get_difference_between_files
+from gendiff.diff import get_difference
 from gendiff.parser import parse
 
 
@@ -17,7 +17,7 @@ def nested_diff():
     ):
         file1_data = parse(file1, FILE1_EXTENSION)
         file2_data = parse(file2, FILE2_EXTENSION)
-    return get_difference_between_files(file1_data, file2_data)
+    return get_difference(file1_data, file2_data)
 
 
 @pytest.fixture
