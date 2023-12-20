@@ -7,37 +7,37 @@
 ### CodeClimate Maintainability and TestCoverage status:
 [![Maintainability](https://api.codeclimate.com/v1/badges/f041e11c244da26f3187/maintainability)](https://codeclimate.com/github/Fiklik/python-project-50/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/f041e11c244da26f3187/test_coverage)](https://codeclimate.com/github/Fiklik/python-project-50/test_coverage)
 
-### Описание 
-Вычислитель отличий – программа, которая определяет разницу между двумя структурами данных.
+### Description
+**Gendiff** is a program that determines the difference between two data structures.
 
-Возможности утилиты:
+Features:
 
-* Поддержка разных входных форматов: yaml, json
-* Генерация отчета в виде plain text, stylish и json
+* Supports different input formats: yaml, json
+* Generating a report in the form of plain text, stylish or json
 
-### Инструкция по установке 
-**make build** - сборка проекта 
+### Install 
+**make build** - building the project 
 
-**make package-install** - установка с помощью pip в пользовательское окружение
+**make package-install** - installation using pip to the user environment
 
-### Запуск
+### Start
 gendiff [-h] [-f FORMAT] first_file second_file
 
-**Опциональные параметры**
-* -h, --help показать руководство по использованию
-* -f FORMAT, --format FORMAT указание в каком виде выполнить отчет
+**Optional parameters**
+* -h, --help show instructions for use
+* -f FORMAT, --format FORMAT instructions in what form to run the report
 
-### Пример работы пакета с плоскими json-файлами
+### An example of how a package works with plain json files
 [![asciicast](https://asciinema.org/a/wb3mXYNPs33w2jLTEfviAXMp8.svg)](https://asciinema.org/a/wb3mXYNPs33w2jLTEfviAXMp8)
 
-### Пример работы пакета с плоскими yml-файлами
+### An example of how a package works with plain yml files
 [![asciicast](https://asciinema.org/a/r2kxXt1Ew0dEvpGf3gC31HM4n.svg)](https://asciinema.org/a/r2kxXt1Ew0dEvpGf3gC31HM4n)
 
-### Пример работы пакета с форматом вывода stylish
+### An example of the package working with the stylish output format
 [![asciicast](https://asciinema.org/a/KSCr8WvsE3TYbw67zg8nd3s8i.svg)](https://asciinema.org/a/KSCr8WvsE3TYbw67zg8nd3s8i)
 
-### Пример работы пакета с форматом вывода plain
+### An example of the package working with the plain output format
 [![asciicast](https://asciinema.org/a/x6PN1Mebs9NT7OlFGKAWcxgFN.svg)](https://asciinema.org/a/x6PN1Mebs9NT7OlFGKAWcxgFN)
 
-### Пример работы пакета с форматом вывода json
+### An example of the package working with the json output format
 [![asciicast](https://asciinema.org/a/sGJPfq9Sme7mJL5aNOSltFxjm.svg)](https://asciinema.org/a/sGJPfq9Sme7mJL5aNOSltFxjm)
